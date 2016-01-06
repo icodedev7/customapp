@@ -1,19 +1,29 @@
+ruby "2.1.5"
 source 'https://rubygems.org'
 
 gem 'shopify_app','6.1.0'
 # Bundle edge Rails instead:gem 'rails',github: 'rails/rails'
-gem 'rails', '4,2,1'
+gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~>5.0'
 # Use Uglifier as compressor for JavaScript assests
-gem 'uglifier', '>~1.3.0'
+gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScripts for ,coffee assets an views
 gem 'coffe-rails', '~>4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem'therubyracer', platforms: :rubygems
 
+
+gem 'bootstrap-sass'
+gem "compass"
+gem "haml"
+gem "heroku-nav"
+gem "rake"
+gem "rdiscount", "~> 1.6.x"
+gem "sass"
+gem "sinatra"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following link in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -35,7 +45,25 @@ gem 'sdoc', '~>0.4.0', group: :doc
 group :development, :test do
 # Call 'bybug' anywhere in the code to stop execution and get a debugger console
 gem 'byebug'
-
+ gem 'spring'
+  gem 'sqlite3'
 #Access an IRB console on expection page or by using <%= console%> in views
-gem "web-console", '~>2.0
+gem "web-console", '~>2.0'
+end
 
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+group :test do
+  gem "rack-test"
+  gem "minitest-spec-context"
+  gem "mocha"
+end
+
+group :packaging do
+  gem "fog"
+end
+group :development do
+  gem "shotgun"
+end
