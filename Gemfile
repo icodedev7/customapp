@@ -53,7 +53,6 @@ group :packaging do
 end
 group :test, :production do
   gem 'pg'
-=======
   gem 'cucumber-rails', '1.2.1', require: false
 >>>>>>> ch03_01_gem_updates
 end
