@@ -1,36 +1,41 @@
-ruby "2.1.5"
-source "http://rubygems.org"
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+source 'https://rubygems.org'
+
+gem 'shopify_app','6.1.0'
+# Bundle edge Rails instead:gem 'rails',github: 'rails/rails'
+gem 'rails', '4,2,1'
+# Use postgresql as the database for Active Record
+gem'pg'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~>5.0'
+# Use Uglifier as compressor for JavaScript assests
+gem 'uglifier', '>~1.3.0'
+# Use CoffeeScripts for ,coffee assets an views
+gem 'coffe-rails', '~>4.1.0'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+# gem'therubyracer', platforms: :rubygems
+
+# Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Turbolinks makes following link in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'bootstrap-sass'
-gem "compass"
-gem "haml"
-gem "heroku-nav"
-gem "rake"
-gem "rdiscount", "~> 1.6.x"
-gem "sass"
-gem "sinatra"
-group :development do
-  gem "shotgun"
-end
+# Build Json APIs with ease. Read more: https://github.com/rails/Jbuilder
+gem 'jbuilder', '~>2.0'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc', '~>0.4.0', group: :doc
+
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~>3.1.7'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+
 group :development, :test do
-  gem 'spring'
-  gem 'sqlite3'
-end
+# Call 'bybug' anywhere in the code to stop execution and get a debugger console
+gem 'byebug'
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-group :test do
-  gem "rack-test"
-  gem "minitest-spec-context"
-  gem "mocha"
-end
-
-group :packaging do
-  gem "fog"
-end
+#Access an IRB console on expection page or by using <%= console%> in views
+gem "web-console", '~>2.0'
+--INSERT---
