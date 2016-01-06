@@ -1,7 +1,7 @@
 ruby "2.2.3"
 source 'https://rubygems.org'
 
-gem 'shopify_app','4.0.2'
+gem 'shopify_app','6.4.0'
 # Bundle edge Rails instead:gem 'rails',github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
