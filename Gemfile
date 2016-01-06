@@ -13,6 +13,7 @@ gem "rake"
 gem "rdiscount", "~> 1.6.x"
 gem "sass"
 gem "sinatra"
+gem 'shopify_app', '6.2.0'
 group :development do
   gem "shotgun"
     gem "sqlite3"
