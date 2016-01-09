@@ -54,9 +54,9 @@ class LoginProtectionTest < ActionController::TestCase
 
   test "login_again_if_different_shop removes current session and redirects to login path" do
     with_application_test_routes do
-      session[:shopify] = "foobar"
-      session[:shopify_domain] = "foobar"
-      sess = stub(url: 'https://foobar.myshopify.com')
+      session[:shopify] = "devlopment-store"
+      session[:shopify_domain] = "devlopment-store"
+      sess = stub(url: 'https://devlopment-store.myshopify.com')
       ShopifyApp::SessionRepository.expects(:retrieve).returns(sess).once
       get :second_login, shop: 'other_shop'
       assert_redirected_to @controller.send(:login_path, shop: 'other_shop')
@@ -67,21 +67,21 @@ class LoginProtectionTest < ActionController::TestCase
 
   test '#shopify_session with no Shopify session, redirects to the login path' do
     with_application_test_routes do
-      get :index, shop: 'foobar'
-      assert_redirected_to @controller.send(:login_path, shop: 'foobar')
+      get :index, shop: 'devlopment-store'
+      assert_redirected_to @controller.send(:login_path, shop: 'devlopment-store')
     end
   end
 
   test '#shopify_session with no Shopify session, sets session[:return_to]' do
     with_application_test_routes do
-      get :index, shop: 'foobar'
-      assert_equal '/?shop=foobar', session[:return_to]
+      get :index, shop: 'devlopment-store'
+      assert_equal '/?shop=devlopment-store', session[:return_to]
     end
   end
 
   test '#shopify_session with no Shopify session, when the request is an XHR, returns an HTTP 401' do
     with_application_test_routes do
-      xhr :get, :index, shop: 'foobar'
+      xhr :get, :index, shop: 'devlopment-store'
       assert_equal 401, response.status
     end
   end
