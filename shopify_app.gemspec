@@ -23,9 +23,9 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test}/*`.split("\n")
   s.require_paths = ["lib"]
   ShopifyApp.configure do |config|
-  config.api_key = ENV['SHOPIFY_CLIENT_API_KEY']
-  config.secret = ENV['SHOPIFY_CLIENT_API_SECRET']
-  config.redirect_uri = "<%= your_redirect_uri %>"
+  config.api_key = ENV['9274b5fb757eea9d28190e00ec188a80']
+  config.secret = ENV['a42c103cbe0534285b7d2b31c02b364c']
+  config.redirect_uri = "<%= https://customappp.herokuapp.com/auth/shopify/callback %>"
   config.scope = 'read_customers, read_orders, write_products'
   config.embedded_app = true
 end
