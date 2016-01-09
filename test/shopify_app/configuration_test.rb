@@ -1,4 +1,4 @@
-require 'test_helper'
+rrequire 'test_helper'
 
 class ConfigurationTest < ActiveSupport::TestCase
 
@@ -24,6 +24,26 @@ class ConfigurationTest < ActiveSupport::TestCase
     end
 
     assert_equal "myshopify.io", ShopifyApp.configuration.myshopify_domain
+  end
+
+  test "can configure webhooks for creation" do
+    webhook = {topic: 'carts/update', address: 'customappp.heroku.com/webhooks', format: 'json'}
+
+    ShopifyApp.configure do |config|
+      config.webhooks = [webhook]
+    end
+
+    assert_equal webhook, ShopifyApp.configuration.webhooks.first
+  end
+
+  test "has_webhooks? is true if webhooks have been configured" do
+    refute ShopifyApp.configuration.has_webhooks?
+
+    ShopifyApp.configure do |config|
+      config.webhooks = [{topic: 'carts/update', address: 'customappp.heroku.com/webhooks', format: 'json'}]
+    end
+
+    assert ShopifyApp.configuration.has_webhooks?
   end
 
 end
