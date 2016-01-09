@@ -35,7 +35,7 @@ class LoginProtectionTest < ActionController::TestCase
 
   test "calling shop session retreives session from storage" do
     with_application_test_routes do
-      session[:shopify] = "foobar"
+      session[:shopify] = "devlopment-store"
       get :index
       ShopifyApp::SessionRepository.expects(:retrieve).returns(session).once
       assert @controller.shop_session
@@ -44,7 +44,7 @@ class LoginProtectionTest < ActionController::TestCase
 
   test "shop session is memoized and does not retreive session twice" do
     with_application_test_routes do
-      session[:shopify] = "foobar"
+      session[:shopify] = "devlopment-store"
       get :index
       ShopifyApp::SessionRepository.expects(:retrieve).returns(session).once
       assert @controller.shop_session
