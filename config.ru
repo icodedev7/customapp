@@ -7,7 +7,7 @@ run Rails.application
 
 
 
-equire 'bundler/setup'
+require 'bundler/setup'
 require 'sinatra/base'
 require 'omniauth-shopify-oauth2'
 
