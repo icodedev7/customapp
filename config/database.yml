@@ -9,10 +9,10 @@
 # Do not set this db to the same as development or production.
 
 production:
-  adapter: postgresql
-  database:debsg67e67fbcr
-  pool: 5
+ adapter: postgresql
+ database:debsg67e67fbcr
+ username:kdzslrgkhcbsbz
+  password:fAV5ZHivRU4GSZ678OV_TZPJ-L
   host:ec2-54-204-20-164.compute-1.amazonaws.com
   timeout: 5000
-  username:kdzslrgkhcbsbz
-  password:fAV5ZHivRU4GSZ678OV_TZPJ-L
+   pool: 5
