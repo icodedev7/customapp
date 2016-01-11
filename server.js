@@ -54,6 +54,11 @@ io.on("connection", function(socket){
 
 });
 
-http.listen(app.get("port"), app.get("ipaddr"), function() {
+/*http.listen(app.get("port"), app.get("ipaddr"), function() {
   console.log("Server up and running. Go to http://" + app.get("ipaddr") + ":" + app.get("port"));
+});*/
+server.listen(process.env.PORT || 3000, function(){
+   var host = server.address().address;
+   var port = server.address().port;
+   console.log('Listening on http://%s:%s', host, port);
 });
