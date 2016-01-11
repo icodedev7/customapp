@@ -12,6 +12,7 @@ production:
  adapter: postgresql
  database:debsg67e67fbcr
  username:kdzslrgkhcbsbz
-  password:fAV5ZHivRU4GSZ678OV_TZPJ-L
-  host:ec2-54-204-20-164.compute-1.amazonaws.com
- 
+ password:fAV5ZHivRU4GSZ678OV_TZPJ-L
+ host:ec2-54-204-20-164.compute-1.amazonaws.com
+ imeout: 5000
+ pool: 5
