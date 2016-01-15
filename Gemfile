@@ -41,7 +41,7 @@ gem 'sdoc', '0.4.0', group: :doc
 
 # use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'cucumber-rails', '1.2.1'
 group :development, :test do
 # Call 'bybug' anywhere in the code to stop execution and get a debugger console
 gem 'byebug', '3.4.0'
